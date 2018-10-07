@@ -1,0 +1,51 @@
+<html ng-app="App">
+    <head>
+
+  	<link rel="stylesheet" href="static/css/style.css">
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script src="static/js/angularapp.js"></script>
+	<script src="static/js/services.js"></script>
+	<script src="static/js/directives.js"></script>
+
+	<style></style>
+    </head>
+    <body ng-controller="AppController">
+
+
+		<div style=" background-color: #d2dedd; padding: 20px;">
+			<div>
+			 <div class="container" >
+			<div style="width: 45%; float:left">
+				<h3>Lower Ranges</h3>
+				<slider properties="{ min:0,max:255}" model="hsvModel.lh"></slider>
+				<slider properties="{ min:0,max:255}" model="hsvModel.ls"></slider>
+				<slider properties="{ min:0,max:255}" model="hsvModel.lv"></slider>
+			</div>
+
+			<div  style="width: 45%; float:right">
+				<h3>Upper Ranges</h3>
+				<slider properties="{ min:0,max:255}" model="hsvModel.uh"></slider>
+				<slider properties="{ min:0,max:255}" model="hsvModel.us"></slider>
+				<slider properties="{ min:0,max:255}" model="hsvModel.uv"></slider>
+			</div>
+			<button ng-click="sendValue()">Freez Color</button>
+		 	<input type="file" ng-file-select="onFileSelect($files)" ng-model="inputImageSrc">
+
+	    </div>
+		</div>
+		<div style="width: 45%; float:left">
+			<!--<img ng-src="{{outputImageSrc}}"/>-->
+			 <img ng-src="{{inputImageSrc}}" />
+
+		</div>
+		<div  style="width: 45%; float:right">
+			<h3>Ranges</h3>
+			H : {{hsvModel.uh-hsvModel.lh}}<br>
+			S: {{hsvModel.us-hsvModel.ls}}<br>
+			V {{hsvModel.uv-hsvModel.lv}}<br>
+
+		</div>
+
+		</div>
+    </body>
+</html>

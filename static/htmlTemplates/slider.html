@@ -1,0 +1,13 @@
+
+
+<div class="progress-box" >
+    <div class="percentage-cur" ng-init="model=0">
+    <span class="num">{{ model }}</span>
+    </div>
+        <div class="progress-bar progress-bar-slider">
+        <input class="progress-slider" type="range" min="{{properties.min}}" max="{{properties.max}}" ng-model="model">
+        <div class="inner" ng-style="{ width: (model *100)/properties.max+'%' }"></div>
+    </div>
+
+</div>
+
